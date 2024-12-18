@@ -35,7 +35,7 @@ jobs:
           name: spring-boot-mongo-jar
           path: target/spring-boot-mongo-1.0.jar
 
-      - name: Do Something with Artifact
+      - name: Docker Build in progress
         run: |
           ls /home/runner/work/actions-java-project/actions-java-project/target
 
@@ -45,3 +45,5 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t my-springboot-app .
+      - name: Checking the Docker Build images
+        run: docker images
