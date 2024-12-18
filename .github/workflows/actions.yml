@@ -55,7 +55,10 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Tag Docker image for Docker Hub
+        run: |
+          docker tag my-springboot-app:latest ${{ secrets.DOCKER_USERNAME }}/my-springboot-app:latest
+
       - name: Push Docker image to Docker Hub
         run: |
-          docker tag ${{ secrets.DOCKER_USERNAME }}/my-springboot-app-1.0:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-springboot-app-1.0:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-springboot-app:latest
