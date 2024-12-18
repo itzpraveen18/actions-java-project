@@ -27,12 +27,21 @@ jobs:
 
       - name: Build with Maven (clean install)
         run: mvn clean install
+
       # Step 4: Upload the JAR file as an artifact
       - name: Upload JAR Artifact
         uses: actions/upload-artifact@v3
         with:
           name: spring-boot-mongo-jar
           path: target/spring-boot-mongo-1.0.jar
+
       - name: Do Something with Artifact
         run: |
-            ls /home/runner/work/actions-java-project/actions-java-project/target
+          ls /home/runner/work/actions-java-project/actions-java-project/target
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t my-springboot-app .
