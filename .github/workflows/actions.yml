@@ -33,3 +33,6 @@ jobs:
         with:
           name: spring-boot-mongo-jar
           path: target/spring-boot-mongo-1.0.jar
+      - name: Do Something with Artifact
+        run: |
+            ls /home/runner/work/actions-java-project/actions-java-project/target
