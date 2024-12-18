@@ -44,7 +44,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-springboot-app .
+          docker build -t my-springboot-app-1.0 .
 
       - name: Checking the Docker Build images
         run: docker images
@@ -57,10 +57,10 @@ jobs:
 
       - name: Tag Docker image for Docker Hub
         run: |
-          docker tag my-springboot-app ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app:latest
+          docker tag my-springboot-app ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-1.0:latest
           - name: Build and Push Docker Image
           uses: docker/build-push-action@v3
           with:
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/github_actions/my-springboot-app:latest
+            tags: ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-1.0:latest
             dockerfile: ./Dockerfile
