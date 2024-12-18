@@ -1,24 +1,88 @@
-# Maven
-target/
-# IntelliJ IDEA
-.idea/
-*.iml
-# Eclipse
-.project
-.classpath
-# Gradle
-.gradle/
-build/
-# Java class files
+# Compiled class files
 *.class
+
 # Log files
 *.log
-# OS generated files
-.DS_Store
-Thumbs.db
-# IDE and editor settings
+
+# Maven target directory
+target/
+
+# Eclipse IDE files
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+
+# NetBeans IDE files
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code settings
 .vscode/
-*.swp
-# JAR files (optional, if you don’t want to track them in Git)
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Generated files
+*.war
+*.ear
 *.jar
 
+# Temporary files
+*.swp
+*.tmp
+*.bak
+*.old
+
+# Dependency directory
+.m2/
+
+# Coverage reports
+coverage/
+.jacoco/
+*.exec
+
+# Test reports
+surefire-reports/
+failsafe-reports/
+
+# Linting and analysis
+.checkstyle/
+.spotbugs/
+.findbugs/
+.pmd/
+
+# Logs and reports
+*.out
+*.err
+
+# Build tools
+build/
+dist/
+
+# Security
+*.pem
+*.key
+*.crt
+*.p12
+
+# OS-specific swap files
+*.sublime-workspace
+*.sublime-project
+
+# Environment-specific
+.env
+*.properties.local
+target/
