@@ -9,48 +9,41 @@ on:
       - dev
 
 jobs:
-  checkout:
+  build:
     runs-on: ubuntu-latest
-    container:
-      image: maven:3.8.1-jdk-17  # Use a container image with Maven and JDK 17
+
     steps:
       - uses: actions/checkout@v4
 
-  maven-build:
-    runs-on: ubuntu-latest
-    container:
-      image: maven:3.8.1-jdk-17  # Ensure the same container is used
-    needs: checkout
-    steps:
-      - uses: actions/checkout@v4
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
       - name: Build with Maven (verify)
         run: mvn --batch-mode --update-snapshots verify
+
       - name: Build with Maven (clean install)
         run: mvn clean install
+
+      # Step 4: Upload the JAR file as an artifact
       - name: Upload JAR Artifact
         uses: actions/upload-artifact@v3
         with:
           name: spring-boot-mongo-jar
           path: target/spring-boot-mongo-1.0.jar
 
-  docker-build:
-    runs-on: ubuntu-latest
-    container:
-      image: docker:20.10.7  # Use a Docker container
-    needs: [checkout, maven-build]
-    steps:
-      - uses: actions/checkout@v4  # Check out the repository
+      - name: Docker Build in progress
+        run: |
+          ls /home/runner/work/actions-java-project/actions-java-project/target
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
       - name: Build Docker image
         run: |
-          echo "Building Docker image..."
-          docker build -f Dockerfile -t my-springboot-app .
+          docker build -t my-springboot-app .
       - name: Checking the Docker Build images
         run: docker images
