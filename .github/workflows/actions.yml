@@ -57,7 +57,7 @@ jobs:
 
       - name: Tag Docker image for Docker Hub
         run: |
-          docker tag my-springboot-app ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-1.0:latest
+          docker tag my-springboot-app-1.0 ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-1.0:latest
           - name: Build and Push Docker Image
           uses: docker/build-push-action@v3
           with:
