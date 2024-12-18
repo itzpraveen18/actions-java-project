@@ -57,8 +57,8 @@ jobs:
 
       - name: Tag Docker image for Docker Hub
         run: |
-          docker tag my-springboot-app ${{ secrets.DOCKER_USERNAME }}/githubactions/my-springboot-app:latest
+          docker tag my-springboot-app ${{ secrets.DOCKER_USERNAME }}/github_actions/my-springboot-app:latest
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/githubactions/my-springboot-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/github_actions/my-springboot-app:latest
