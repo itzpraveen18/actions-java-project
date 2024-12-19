@@ -6,35 +6,32 @@ on:
       - main
 
 jobs:
-  echo-environment-vars:
+  echo-environment-vars-dev:
     runs-on: ubuntu-latest
-    environment: dev  # Specify the environment for the job here
-    
+    environment: dev  # Link this job to the 'dev' environment
     steps:
       - name: Print Environment Variables for Dev
         run: |
           echo "Environment: Dev"
-          echo "USER=${{ secrets.USER }}"
-          echo "API_KEY=${{ secrets.API_KEY }}"
+          echo "USER=${{ env.USER }}"
+          echo "API_KEY=${{ env.API_KEY }}"
 
   echo-environment-vars-test:
     runs-on: ubuntu-latest
-    environment: test  # Specify the environment for the job here
-    
+    environment: test  # Link this job to the 'test' environment
     steps:
       - name: Print Environment Variables for Test
         run: |
           echo "Environment: Test"
-          echo "USER=${{ secrets.USER }}"
-          echo "API_KEY=${{ secrets.API_KEY }}"
+          echo "USER=${{ env.USER }}"
+          echo "API_KEY=${{ env.API_KEY }}"
 
   echo-environment-vars-prod:
     runs-on: ubuntu-latest
-    environment: prod  # Specify the environment for the job here
-    
+    environment: prod  # Link this job to the 'prod' environment
     steps:
       - name: Print Environment Variables for Prod
         run: |
           echo "Environment: Prod"
-          echo "USER=${{ secrets.USER }}"
-          echo "API_KEY=${{ secrets.API_KEY }}"
+          echo "USER=${{ env.USER }}"
+          echo "API_KEY=${{ env.API_KEY }}"
