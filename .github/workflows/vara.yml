@@ -8,25 +8,26 @@ on:
 jobs:
   echo-environment-vars:
     runs-on: ubuntu-latest
-
+    
+    # Use environment context to reference each environment
     steps:
       - name: Print Environment Variables for Dev
-        environment: dev
+        environment: dev  # Defines the environment for this step
         run: |
           echo "Environment: Dev"
-          echo "USER=${{ vars.dev_USER }}"
-          echo "API_KEY=${{ vars.dev_API_KEY }}"
+          echo "USER=${{ github.env.USER }}"
+          echo "API_KEY=${{ github.env.API_KEY }}"
 
       - name: Print Environment Variables for Test
-        environment: test
+        environment: test  # Defines the environment for this step
         run: |
           echo "Environment: Test"
-          echo "USER=${{ vars.test_USER }}"
-          echo "API_KEY=${{ vars.test_API_KEY }}"
+          echo "USER=${{ github.env.USER }}"
+          echo "API_KEY=${{ github.env.API_KEY }}"
 
       - name: Print Environment Variables for Prod
-        environment: prod
+        environment: prod  # Defines the environment for this step
         run: |
           echo "Environment: Prod"
-          echo "USER=${{ vars.prod_USER }}"
-          echo "API_KEY=${{ vars.prod_API_KEY }}"
+          echo "USER=${{ github.env.USER }}"
+          echo "API_KEY=${{ github.env.API_KEY }}"
