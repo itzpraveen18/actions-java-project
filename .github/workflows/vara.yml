@@ -8,32 +8,16 @@ on:
 jobs:
   echo-environment-vars:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [dev, test, prod]
 
     steps:
-      - name: Print Environment Variables for Dev
+      - name: Print Environment Variables
         env:
-          USER: ${{ vars.USER }}
-          API_KEY: ${{ vars.API_KEY }}
+          USER: ${{ secrets[matrix.environment + '_USER'] }}
+          API_KEY: ${{ secrets[matrix.environment + '_API_KEY'] }}
         run: |
-          echo "Environment: Dev"
+          echo "Environment: ${{ matrix.environment }}"
           echo "USER=$USER"
           echo "API_KEY=$API_KEY"
-
-      - name: Print Environment Variables for Test
-        env:
-          USER: ${{ vars.USER }}
-          API_KEY: ${{ vars.API_KEY }}
-        run: |
-          echo "Environment: Test"
-          echo "USER=$USER"
-          echo "API_KEY=$API_KEY"
-
-      - name: Print Environment Variables for Prod
-        env:
-          USER: ${{ vars.USER }}
-          API_KEY: ${{ vars.API_KEY }}
-        run: |
-          echo "Environment: Prod"
-          echo "USER=$USER"
-          echo "API_KEY=$API_KEY"
-
