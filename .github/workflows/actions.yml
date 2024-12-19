@@ -44,7 +44,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t itzpraveen18/spring-boot-app-new-2 .
+          docker build -t itzpraveen18/spring-boot-app-new-$(date +%Y%m%d%H%M%S) .
 
       - name: Checking the Docker Build images
         run: docker images
