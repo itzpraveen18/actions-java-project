@@ -15,6 +15,7 @@ jobs:
           echo "Environment: Prod"
           echo " this is the key of $USER"
           echo  "this is key of $API_KEY" 
+          echo $?
 
   echo-environment-vars-test:
     runs-on: ubuntu-latest
