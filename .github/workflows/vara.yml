@@ -12,30 +12,21 @@ jobs:
     steps:
       - name: Print Environment Variables for Dev
         environment: dev
-        env:
-          USER: ${{ secrets.USER }}
-          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Environment: Dev"
-          echo "USER=$USER"
-          echo "API_KEY=$API_KEY"
+          echo "USER=${{ secrets.USER }}"
+          echo "API_KEY=${{ secrets.API_KEY }}"
 
       - name: Print Environment Variables for Test
         environment: test
-        env:
-          USER: ${{ secrets.USER }}
-          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Environment: Test"
-          echo "USER=$USER"
-          echo "API_KEY=$API_KEY"
+          echo "USER=${{ secrets.USER }}"
+          echo "API_KEY=${{ secrets.API_KEY }}"
 
       - name: Print Environment Variables for Prod
         environment: prod
-        env:
-          USER: ${{ secrets.USER }}
-          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Environment: Prod"
-          echo "USER=$USER"
-          echo "API_KEY=$API_KEY"
+          echo "USER=${{ secrets.USER }}"
+          echo "API_KEY=${{ secrets.API_KEY }}"
