@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Print Environment Variables for Dev
         run: |
-          echo "Environment: Dev"
-          echo "USER=${{ github.env.USER }}"  # Incorrect usage
-          echo "API_KEY=${{ github.env.API_KEY }}"  # Incorrect usage
+          echo "Environment: Prod"
+          echo " this is the key of $USER"
+          echo  "this is key of $API_KEY" 
 
   echo-environment-vars-test:
     runs-on: ubuntu-latest
@@ -22,9 +22,9 @@ jobs:
     steps:
       - name: Print Environment Variables for Test
         run: |
-          echo "Environment: Test"
-          echo "USER=${{ github.env.USER }}"  # Incorrect usage
-          echo "API_KEY=${{ github.env.API_KEY }}"  # Incorrect usage
+          echo "Environment: Prod"
+          echo " this is the key of $USER"
+          echo  "this is key of $API_KEY" 
 
   echo-environment-vars-prod:
     runs-on: ubuntu-latest
@@ -33,5 +33,5 @@ jobs:
       - name: Print Environment Variables for Prod
         run: |
           echo "Environment: Prod"
-          echo "USER=${{ github.env.USER }}"  # Incorrect usage
-          echo "API_KEY=${{ github.env.API_KEY }}"  # Incorrect usage
+          echo " this is the key of $USER"
+          echo  "this is key of $API_KEY" 
