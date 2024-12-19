@@ -13,8 +13,8 @@ jobs:
       - name: Print Environment Variables for Dev
         environment: dev
         env:
-          USER: ${{ vars.USER }}
-          API_KEY: ${{ vars.API_KEY }}
+          USER: ${{ secrets.USER }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Environment: Dev"
           echo "USER=$USER"
@@ -23,8 +23,8 @@ jobs:
       - name: Print Environment Variables for Test
         environment: test
         env:
-          USER: ${{ vars.USER }}
-          API_KEY: ${{ vars.API_KEY }}
+          USER: ${{ secrets.USER }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Environment: Test"
           echo "USER=$USER"
@@ -33,8 +33,8 @@ jobs:
       - name: Print Environment Variables for Prod
         environment: prod
         env:
-          USER: ${{ vars.USER }}
-          API_KEY: ${{ vars.API_KEY }}
+          USER: ${{ secrets.USER }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "Environment: Prod"
           echo "USER=$USER"
