@@ -44,7 +44,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t itzpraveen18/spring-boot-app-new-$(date +%Y%m%d%H%M%S) .
+          docker build -t  ${{ secrets.DOCKER_LOGIN }}/spring-boot-app-new-$(date +%Y%m%d%H%M%S) .
 
       - name: Checking the Docker Build images
         run: docker images
@@ -57,4 +57,4 @@ jobs:
 
       - name: Pushing the Docker Image into the Docker Hub
         run: 
-          docker push  ${{ secrets.DOCKER_LOGIN }}/spring-boot-app-new-2
+          docker push  ${{ secrets.DOCKER_LOGIN }}/spring-boot-app-new-$(date +%Y%m%d%H%M%S)
