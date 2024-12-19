@@ -44,7 +44,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-springboot-app-2.0 .
+          docker build -t itzpraveen18/spring-boot-app-new-2 .
 
       - name: Checking the Docker Build images
         run: docker images
@@ -56,11 +56,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Tag Docker image for Docker Hub
-        run: |
-          docker tag my-springboot-app-2.0 ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-2.0:latest
-          - name: Build and Push Docker Image
-          uses: docker/build-push-action@v3
-          with:
-            push: true
-            tags: ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-2.0:latest
-            dockerfile: ./Dockerfile
+        run: 
+          #docker tag my-springboot-app-2.0 ${{ secrets.DOCKER_LOGIN }}/github_actions/my-springboot-app-2.0:latest
+          docker push  itzpraveen18/spring-boot-app-new-2
