@@ -25,6 +25,7 @@ jobs:
       - name: Print Environment Variables for Test
         run: |
           echo "Environment: Prod"
+          echo " this variables $GITHUB_ACTION"
           echo " this is the key of $USER"
           echo  "this is key of $API_KEY" 
 
