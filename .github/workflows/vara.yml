@@ -16,6 +16,7 @@ jobs:
           echo " this is the key of $USER"
           echo  "this is key of $API_KEY" 
           echo $?
+          echo " this variables $GITHUB_ACTION is $GITHUB_WORKFLOW  $GITHUB_REPOSITORY "
 
   echo-environment-vars-test:
     runs-on: ubuntu-latest
