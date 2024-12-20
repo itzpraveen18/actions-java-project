@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Print Environment Variables for Dev
         run: |
+          echo "Repository Name: ${{ github.repository }}"
+          echo "Branch Name: ${{ github.ref_name }}" 
           echo "Environment: Prod"
           echo " this is the key of $USER"
           echo  "this is key of $API_KEY" 
