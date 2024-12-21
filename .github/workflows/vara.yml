@@ -16,11 +16,11 @@ jobs:
           echo "Branch Name: ${{ github.ref_name }}" 
           echo "Event Name: ${{ github.event_name }}"
           echo "Commit SHA: ${{ github.sha }}"
-          echo "Environment: Prod"
-          echo " this is the key of $USER"
-          echo  "this is key of $API_KEY" 
+          echo "Environment: Dev"
+          echo "This is the key of $USER"
+          echo "This is key of $API_KEY" 
           echo $?
-          echo " this variables $GITHUB_ACTION is $GITHUB_WORKFLOW  $GITHUB_REPOSITORY "
+          echo "This variables $GITHUB_ACTION is $GITHUB_WORKFLOW  $GITHUB_REPOSITORY"
 
   echo-environment-vars-test:
     runs-on: ubuntu-latest
@@ -28,10 +28,10 @@ jobs:
     steps:
       - name: Print Environment Variables for Test
         run: |
-          echo "Environment: Prod"
-          echo " this variables $GITHUB_ACTION"
-          echo " this is the key of $USER"
-          echo  "this is key of $API_KEY" 
+          echo "Environment: Test"
+          echo "This variables $GITHUB_ACTION"
+          echo "This is the key of $USER"
+          echo "This is key of $API_KEY"
 
   echo-environment-vars-prod:
     runs-on: ubuntu-latest
@@ -40,5 +40,9 @@ jobs:
       - name: Print Environment Variables for Prod
         run: |
           echo "Environment: Prod"
-          echo " this is the key of $USER"
-          echo  "this is key of $API_KEY" 
+          echo "This is the key of $USER"
+          echo "This is key of $API_KEY"
+
+branding:
+  icon: "mic"
+  color: "purple"
