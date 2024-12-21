@@ -42,7 +42,6 @@ jobs:
           echo "Environment: Prod"
           echo "This is the key of $USER"
           echo "This is key of $API_KEY"
-
-branding:
-  icon: "mic"
-  color: "purple"
+        branding:
+          icon: "mic"
+          color: "purple"  
