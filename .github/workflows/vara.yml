@@ -16,6 +16,8 @@ jobs:
       - name: Print Environment Variables for Dev
         run: |
           echo "Repository Name: ${{ github.repository }}"
+          echo "::set-env name=ACTIONS_RUNNER_DEBUG::true" 
+          echo "::set-output name=ACTIONS_RUNNER_DEBUG::true"
           echo "Debugging Mode: Step Debug = $ACTIONS_STEP_DEBUG, Runner Debug = $ACTIONS_RUNNER_DEBUG"
           echo "Branch Name: ${{ github.ref_name }}" 
           echo "Event Name: ${{ github.event_name }}"
@@ -26,6 +28,7 @@ jobs:
           echo "Deploying to production server on branch $GITHUB_REF"
           echo $?
           echo "This variables $GITHUB_ACTION is $GITHUB_WORKFLOW  $GITHUB_REPOSITORY"
+
 
   echo-environment-vars-test:
     runs-on: ubuntu-latest
