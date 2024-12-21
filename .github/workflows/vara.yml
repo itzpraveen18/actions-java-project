@@ -7,7 +7,7 @@ on:
 env:
   ACTIONS_STEP_DEBUG: true
   ACTIONS_RUNNER_DEBUG: true
-  
+
 jobs:
   echo-environment-vars-dev:
     runs-on: ubuntu-latest
@@ -23,6 +23,7 @@ jobs:
           echo "Environment: Dev"
           echo "This is the key of $USER"
           echo "This is key of $API_KEY" 
+          echo "Deploying to production server on branch $GITHUB_REF"
           echo $?
           echo "This variables $GITHUB_ACTION is $GITHUB_WORKFLOW  $GITHUB_REPOSITORY"
 
