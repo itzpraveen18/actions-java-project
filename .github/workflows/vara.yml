@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Print Environment Variables for Dev
         run: |
+          echo "ACTIONS_ALLOW_UNSECURE_COMMANDS=true" >> $GITHUB_ENV
           echo "Repository Name: ${{ github.repository }}"
           echo "::set-env name=ACTIONS_RUNNER_DEBUG::true" 
           echo "::set-output name=ACTIONS_RUNNER_DEBUG::true"
